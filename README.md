@@ -1,2 +1,4 @@
 # influxdbtest
+
+maccodatoken c0ngZ5k0UpPaUmRWkq2NFv-NZ_R1aBrKw042lj6k9kHBZu9DlheaktLrpaG9G3sDndEFllB2a-gqbgpWwbWTnw==
 # influxdbtest

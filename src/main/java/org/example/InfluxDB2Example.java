@@ -16,12 +16,11 @@ import com.influxdb.query.FluxTable;
 
 public class InfluxDB2Example {
 
-    private static char[] token = "MJNUaQG9fIx7U1xJPtRwN2E77s2Ff8YwWAOck4CZacNDR180Y1wNPnUmX90K9sf8OXWSGRT7lozBFQkAzsaymw==".toCharArray();
     private static String org = "org1";
     private static String bucket = "buck1";
 
     public static void main(final String[] args) {
-
+        char[] token = args[0].toCharArray();
         InfluxDBClient influxDBClient = InfluxDBClientFactory.create("http://localhost:8086", token, org, bucket);
 
         //
