@@ -36,16 +36,20 @@ public class WriteBatchExample {
                 .build())) {
     
             writeApi.listenEvents(WriteSuccessEvent.class, (value) -> countDownLatch.countDown());
-            //
-            // Write by POJO
-            //
-            Temperature temperature = new Temperature();
-            temperature.location = "south";
-            temperature.value = 62D;
-            temperature.time = Instant.now();
-            writeApi.writeMeasurement("buck1", "org1", WritePrecision.MS, temperature);
+            
+            for(int i=0 ; i<10000 ; i++) {
     
-            countDownLatch.await(2, TimeUnit.SECONDS);
+                //
+                // Write by POJO
+                //
+                Temperature temperature = new Temperature();
+                temperature.location = "south";
+                temperature.value = 62D;
+                temperature.time = Instant.now();
+                writeApi.writeMeasurement("buck1", "org1", WritePrecision.MS, temperature);
+            }
+    
+            countDownLatch.await(1000, TimeUnit.MILLISECONDS);
         }
     }
     
